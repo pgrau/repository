@@ -1,0 +1,62 @@
+{
+  "name": "pgrau/repository",
+  "type": "project",
+  "license": "MIT",
+  "description": "Repositories and pipelines",
+  "authors": [
+    {
+      "name": "Pau Ferran Grau Lorenz",
+      "email": "pau.ferran.grau@gmail.com",
+      "homepage": "https://github.com/pgrau/"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^8.1"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Repository\\": "src/Repository/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test\\Unit\\Repository\\": "tests/unit/Repository/"
+    }
+  },
+  "replace": {
+  },
+  "scripts": {
+    "auto-scripts": {
+    },
+    "post-install-cmd": [
+    ],
+    "post-update-cmd": [
+    ],
+    "phpstan": "./vendor/bin/phpstan analyse --memory-limit=4000M",
+    "coverage": "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html metrics/coverage",
+    "test": "./vendor/bin/phpunit --coverage-html metrics/coverage",
+    "analizer": "./vendor/bin/phpmetrics --report-html=metrics/analizer src",
+    "phpcs": "./vendor/bin/php-cs-fixer fix -vv  --dry-run",
+    "fixer": "./vendor/bin/php-cs-fixer fix -vv"
+  },
+  "conflict": {
+  },
+  "extra": {
+  },
+  "require-dev": {
+    "phpmetrics/phpmetrics": "^2.7",
+    "phpstan/phpstan": "^0.12.80",
+    "phpunit/phpunit": "^9.5",
+    "roave/security-advisories": "dev-latest",
+    "squizlabs/php_codesniffer": "^3.5",
+    "friendsofphp/php-cs-fixer": "^2.18"
+  }
+}
