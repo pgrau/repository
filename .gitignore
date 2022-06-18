@@ -3,7 +3,6 @@ metrics/
 vendor/
 projects/.git
 projects/*/.git
-projects/*/.git
 projects/1/vendor
 projects/2/vendor
 projects/2/3/vendor

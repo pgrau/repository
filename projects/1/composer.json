@@ -1,0 +1,50 @@
+{
+  "name": "pgrau/1",
+  "type": "project",
+  "license": "MIT",
+  "description": "Repositories and pipelines. Project 1",
+  "authors": [
+    {
+      "name": "Pau Ferran Grau Lorenz",
+      "email": "pau.ferran.grau@gmail.com",
+      "homepage": "https://github.com/pgrau/"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^8.1",
+    "symfony/console": "^6.1"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+    }
+  },
+  "replace": {
+  },
+  "scripts": {
+    "auto-scripts": {
+    },
+    "post-install-cmd": [
+    ],
+    "post-update-cmd": [
+    ]
+  },
+  "conflict": {
+  },
+  "extra": {
+  },
+  "require-dev": {
+
+  }
+}
