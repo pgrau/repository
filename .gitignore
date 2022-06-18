@@ -12,4 +12,3 @@ projects/2/3/composer.lock
 composer.lock
 *.cache
 tests/data/composer/vendor
-tests/data/composer/composer.lock
