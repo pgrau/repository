@@ -1,0 +1,21 @@
+name: "Continuous Integration"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: "Continuous Integration"
+    runs-on: "ubuntu-20.04"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Start all the environment
+        run: make start
+
+      - name: Run code standard / analisys code /  tests
+        run: make pipeline
