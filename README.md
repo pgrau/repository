@@ -1,5 +1,7 @@
 # Repository
 
+![Continuous Integration](https://github.com/pgrau/repository/workflows/Continuous%20Integration/badge.svg)
+
 Get all dependencies and execute your pipeline
 
 ### 🖥️ Stack Technology
