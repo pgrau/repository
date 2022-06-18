@@ -1,0 +1,17 @@
+#!/usr/local/bin/php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$useCase = new \Repository\UseCase\ExecuteContinuousIntegrationByCommit\UseCase(
+    new \Repository\Infrastructure\Persistence\InMemory\Code\InMemoryScanDir(),
+    new \Repository\Infrastructure\Dependency\Composer\ComposerExecutor(),
+    new \Repository\Infrastructure\Persistence\InMemory\Code\InMemoryPackageRepository(),
+);
+
+$application = new Application('Project');
+$application->add(new \Repository\Infrastructure\UI\Console\PushCommitCommand($useCase));
+
+$application->run();

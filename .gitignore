@@ -1,5 +1,16 @@
 .idea/
 metrics/
 vendor/
+projects/.git
+projects/*/.git
+projects/*/.git
+projects/1/vendor
+projects/2/vendor
+projects/2/3/vendor
+projects/1/composer.lock
+projects/2/composer.lock
+projects/2/3/composer.lock
 composer.lock
 *.cache
+tests/data/composer/vendor
+tests/data/composer/composer.lock

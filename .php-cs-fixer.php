@@ -4,7 +4,9 @@ $finder = PhpCsFixer\Finder::create()
     ->in([__DIR__.'/src', __DIR__.'/tests'])
 ;
 
-return PhpCsFixer\Config::create()
+$config = new PhpCsFixer\Config();
+
+return $config
     ->setRules([
         '@PSR2' => true,
         'no_unused_imports' => true,
@@ -30,7 +32,7 @@ return PhpCsFixer\Config::create()
         'no_superfluous_phpdoc_tags' => true,
         'binary_operator_spaces' => true,
         'single_quote' => true,
-        'class_attributes_separation' => ['elements' => ['method', 'property']],
+        'class_attributes_separation' => ['elements' => ['method' => 'one', 'property' => 'one']],
         'no_whitespace_in_blank_line' => true,
     ])
     ->setFinder($finder)
