@@ -24,6 +24,17 @@ final class PackageCollection
         return $this->collection;
     }
 
+    public function existByName(string $name): bool
+    {
+        foreach ($this->collection as $package) {
+            if ($package->name() === $name) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public function count(): int
     {
         return count($this->get());

@@ -5,13 +5,32 @@ require __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
 
-$useCase = new \Repository\UseCase\ExecuteContinuousIntegrationByCommit\UseCase(
+$application = new Application('Project');
+
+$useCasePushCommit = new \Repository\UseCase\ExecuteContinuousIntegrationByCommit\UseCase(
     new \Repository\Infrastructure\Persistence\InMemory\Code\InMemoryScanDir(),
     new \Repository\Infrastructure\Dependency\Composer\ComposerExecutor(),
     new \Repository\Infrastructure\Persistence\InMemory\Code\InMemoryPackageRepository(),
 );
 
-$application = new Application('Project');
-$application->add(new \Repository\Infrastructure\UI\Console\PushCommitCommand($useCase));
+$application->add(new \Repository\Infrastructure\UI\Console\PushCommitCommand($useCasePushCommit));
+
+$useCaseGetPackages = new \Repository\UseCase\GetPackagesByDirectory\UseCase(
+    new \Repository\Infrastructure\Persistence\InMemory\Code\InMemoryScanDir(),
+    new \Repository\Infrastructure\Dependency\Composer\ComposerExecutor(),
+    new \Repository\Infrastructure\Persistence\InMemory\Code\InMemoryPackageRepository(),
+    new \Repository\Infrastructure\Persistence\InMemory\Code\InMemoryProjectRepository(),
+);
+
+$application->add(new \Repository\Infrastructure\UI\Console\GetPackagesByDirectoryCommand($useCaseGetPackages));
+
+$useCaseGetProjects = new \Repository\UseCase\GetProjectByPackageName\UseCase(
+    new \Repository\Infrastructure\Persistence\InMemory\Code\InMemoryScanDir(),
+    new \Repository\Infrastructure\Dependency\Composer\ComposerExecutor(),
+    new \Repository\Infrastructure\Persistence\InMemory\Code\InMemoryPackageRepository(),
+    new \Repository\Infrastructure\Persistence\InMemory\Code\InMemoryProjectRepository(),
+);
+
+$application->add(new \Repository\Infrastructure\UI\Console\GetProjectsByPackageNameCommand($useCaseGetProjects));
 
 $application->run();
