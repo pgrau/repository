@@ -19,6 +19,8 @@ final class PushCommitCommandTest extends TestCase
 
     protected function setUp(): void
     {
+        \apcu_clear_cache();
+
         $useCase = new UseCase(
             new InMemoryScanDir(),
             new ComposerExecutor(),
@@ -49,5 +51,22 @@ final class PushCommitCommandTest extends TestCase
 
         $this->assertStringContainsString('pgrau/2', $display);
         $this->assertStringContainsString('pgrau/3', $display);
+
+        $iterator = new \APCUIterator();
+        $this->assertSame(2, $iterator->getTotalCount());
+    }
+
+    public function testGivenACommitWhenExternalPackageIsUpdatedThenNotExecutePipeline()
+    {
+        $this->commandTester->execute(
+            [
+                'urlGit' => 'https://github.com/symfony/console.git',
+                'commit' => 'c9646197ef43b0e2ff44af61e7f0571526fd4170',
+                'version' => 'v6.1.0'
+            ]
+        );
+
+        $iterator = new \APCUIterator();
+        $this->assertSame(0, $iterator->getTotalCount());
     }
 }
