@@ -12,6 +12,16 @@ Then we need indicate which pipelines need to be executed
 
 <p>PHP 8.1</p>
 
+<p>This project uses:</p>
+<ul>
+   <li>Solid principles</li>
+   <li>DDD</li>
+   <li>Hexagonal Architecture</li>
+   <li>Clean Architecture</li>
+   <li>Design pattern: Observer</li>
+   <li>Unit, integration and functional tests</li>
+</ul>
+
 ## 🚀 Environment Setup
 
 ### 🐳 Needed tools
@@ -59,9 +69,9 @@ We have projects in the folder `projects`
 
 ![](docs/assets/projects.png)
 
-We have by default projects 1, 2 and 3, but you can add unlimited projects
+We have by default projects 1, 2 and 3, but you can add unlimited projects.
 
-We consider is an internal project all projects where the name of composer match with this regular expression:
+We consider the folder is a project when exists the file composer.json, and it is an internal project all projects where the name of composer match with this regular expression:
 
 ```
 /^pgrau\/[a-z0-9](([_.]?|-{0,2})[a-z0-9]+)*$/
