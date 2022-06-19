@@ -69,7 +69,80 @@ Then we need indicate which pipelines need to be executed
 
 We have projects in the folder `projects`
 
-![](docs/assets/projects.png)
+```
+projects
+├── 1
+│   ├── composer.json
+│   ├── composer.lock
+│   └── vendor
+│       ├── autoload.php
+│       ├── composer
+│       │   ├── ClassLoader.php
+│       │   ├── InstalledVersions.php
+│       │   ├── LICENSE
+│       │   ├── autoload_classmap.php
+│       │   ├── autoload_files.php
+│       │   ├── autoload_namespaces.php
+│       │   ├── autoload_psr4.php
+│       │   ├── autoload_real.php
+│       │   ├── autoload_static.php
+│       │   ├── installed.json
+│       │   ├── installed.php
+│       │   └── platform_check.php
+│       ├── psr
+│       │   └── container
+│       └── symfony
+│           ├── console
+│           ├── deprecation-contracts
+│           ├── polyfill-ctype
+│           ├── polyfill-intl-grapheme
+│           ├── polyfill-intl-normalizer
+│           ├── polyfill-mbstring
+│           ├── service-contracts
+│           └── string
+└── 2
+    ├── 3
+    │   ├── composer.json
+    │   ├── composer.lock
+    │   └── vendor
+    │       ├── autoload.php
+    │       ├── composer
+    │       ├── pgrau
+    │       ├── psr
+    │       └── symfony
+    ├── composer.json
+    ├── composer.lock
+    └── vendor
+        ├── autoload.php
+        ├── composer
+        │   ├── ClassLoader.php
+        │   ├── InstalledVersions.php
+        │   ├── LICENSE
+        │   ├── autoload_classmap.php
+        │   ├── autoload_files.php
+        │   ├── autoload_namespaces.php
+        │   ├── autoload_psr4.php
+        │   ├── autoload_real.php
+        │   ├── autoload_static.php
+        │   ├── installed.json
+        │   ├── installed.php
+        │   └── platform_check.php
+        ├── pgrau
+        │   └── 1
+        ├── psr
+        │   └── container
+        └── symfony
+            ├── console
+            ├── deprecation-contracts
+            ├── polyfill-ctype
+            ├── polyfill-intl-grapheme
+            ├── polyfill-intl-normalizer
+            ├── polyfill-mbstring
+            ├── service-contracts
+            └── string
+
+```
+
 
 We have by default projects 1, 2 and 3, but you can add unlimited projects.
 
