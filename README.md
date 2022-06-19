@@ -73,7 +73,7 @@ We have projects in the folder `projects`
 
 We have by default projects 1, 2 and 3, but you can add unlimited projects.
 
-We consider the folder is a project when exists the file composer.json, and it is an internal project all projects where the name of composer match with this regular expression:
+We consider the folder is a project when exists the file composer.json, and it is an internal project when the name of composer name match with this regular expression:
 
 ```
 /^pgrau\/[a-z0-9](([_.]?|-{0,2})[a-z0-9]+)*$/
