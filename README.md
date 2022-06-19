@@ -11,6 +11,7 @@ Then we need indicate which pipelines need to be executed
 ### 🖥️ Stack Technology
 
 <p>PHP 8.1</p>
+<p>Docker</p>
 
 <p>This project uses:</p>
 <ul>
@@ -20,6 +21,7 @@ Then we need indicate which pipelines need to be executed
    <li>Clean Architecture</li>
    <li>Design pattern: Observer</li>
    <li>Unit, integration and functional tests</li>
+   <li>CI with Github actions.</li>
 </ul>
 
 ## 🚀 Environment Setup
