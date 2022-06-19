@@ -9,6 +9,8 @@ use SplObserver;
 
 final class Package implements \SplSubject
 {
+    const PROJECT_INTERNAL_REGEXP = '/^pgrau\/[a-z0-9](([_.]?|-{0,2})[a-z0-9]+)*$/';
+
     private \SplObjectStorage $observers;
 
     public function __construct(
@@ -22,7 +24,7 @@ final class Package implements \SplSubject
 
     public function pushCommit(Commit $commit): void
     {
-        if ($this->url()->get() === $commit->url()) {
+        if ($this->url()->get() === $commit->url() && \preg_match(self::PROJECT_INTERNAL_REGEXP, $this->name())) {
             $this->notify();
         }
     }
